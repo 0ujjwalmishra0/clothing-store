@@ -2,3 +2,9 @@ body{
   font-family: 'Open Sans Condensed';
   padding: 20px 60px;
 }
+
+/* overriding default <a> of html to remove underline in links */
+a{
+  text-decoration: none;
+  color: black;
+}
