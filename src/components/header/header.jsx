@@ -25,7 +25,7 @@ const Header = ({ currentUser }) => (
           </Link>
         )}
       </Link>
-      <img class= 'image' src='https://lh3.googleusercontent.com/a-/AOh14GhXRGpO2oMbGX0vANrhYOzwwVtJ5I1PWVtIOiNZ'/>
+      <img className= 'image' alt= 'profile'src='https://lh3.googleusercontent.com/a-/AOh14GhXRGpO2oMbGX0vANrhYOzwwVtJ5I1PWVtIOiNZ'/>
     </div>
   </div>
 );

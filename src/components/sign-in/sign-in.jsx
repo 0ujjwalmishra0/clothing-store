@@ -4,7 +4,7 @@ import "./sign-in.scss";
 import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
 
-import { signInWithGoogle } from "../../firebase/firebase-util";
+import { auth, signInWithGoogle } from "../../firebase/firebase-util";
 
 //for sign-in use class bcz we need to store what user type in
 
@@ -18,9 +18,10 @@ class SignIn extends React.Component {
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async(event) => {
     //preventing default behaviour to gain more control
     event.preventDefault();
+    
     this.setState({ email: "", password: "" });
   };
 

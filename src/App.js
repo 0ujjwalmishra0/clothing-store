@@ -28,23 +28,19 @@ class App extends React.Component {
           // console.log(snapShot.data())
           // id of document can be accessed using, snapshot.id
           // all other data can be accessed using, snapShot.data()
-          this.setState(
-            {
-              currentUser: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
             }
-          );
+          });
+          
         });
       }
       //if user is null or if user signs out
       else {
-        // since here, userAuth is null
-        this.state({
-          // currentUser: userAuth
-          currentUser: null,
-        });
+      // since here, userAuth is null
+      this.setState({currentUser: userAuth});
       }
     });
   }
