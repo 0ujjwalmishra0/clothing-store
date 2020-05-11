@@ -13,6 +13,37 @@ const config= {
     measurementId: "G-FNVTWBX17N"
   };
 
+  export const createUserProfileDocument= async (userAuth, additionalData)=> {
+
+  if(!userAuth) return;
+  const usersRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot= await usersRef.get();
+  console.log('snapshot is:',snapShot);
+  console.log('userAuth is ',userAuth);
+  console.log('photurl is',userAuth.photoURL);
+  
+  if(!snapShot.exists){
+    const {displayName, email, photoURL}= userAuth;
+    const createdAt= new Date();
+    try {
+      await usersRef.set({
+        displayName,
+        email,
+        createdAt,
+        photoURL,
+        ...additionalData,
+
+        // 'photoURL': userAuth.photoURL,
+      })
+    } catch (error) {
+      console.log('error creating user', error.message);
+      
+    }
+  }
+  return usersRef;
+  
+  }
+
   firebase.initializeApp(config);
   export const auth = firebase.auth();
   export const firestore= firebase.firestore();
