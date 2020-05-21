@@ -42,7 +42,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="sign-in">
-        <h2>I already have an account</h2>
+        <h1>I already have an account</h1>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -65,7 +65,7 @@ class SignIn extends React.Component {
           />
 
           <div className='buttons'>
-            <CustomButton type="submit">Sign In</CustomButton>
+            <CustomButton type="button">Sign In</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign In with Google
             </CustomButton>
