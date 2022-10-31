@@ -1,1 +1,1 @@
-# clothing-store
+# clothing-store project
